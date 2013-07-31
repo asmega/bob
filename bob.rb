@@ -1,5 +1,6 @@
 class Bob
   def hey(string)
+    return "Fine. Be that way." if silence?(string)
     return "Woah, chill out!" if forceful_question?(string)
     return "Sure." if question?(string)
     return "Woah, chill out!" if shouting?(string)
@@ -11,7 +12,7 @@ class Bob
   private
 
   def shouting?(string)
-    string =~ /^([^a-z])+\!$/
+    string =~ /^([^a-z])+$/
   end
 
   def forceful?(string)
@@ -24,5 +25,9 @@ class Bob
 
   def forceful_question?(string)
     string =~ /^([^a-z])+\?$/
+  end
+
+  def silence?(string)
+    !string || string.empty?
   end
 end
