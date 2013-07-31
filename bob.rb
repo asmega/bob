@@ -16,11 +16,11 @@ class Bob
   end
 
   def forceful?(string)
-    string =~ /\!$/
+    string.end_with?('!')
   end
 
   def question?(string)
-    string =~ /\?$/
+    string.end_with?('?')
   end
 
   def forceful_question?(string)
@@ -28,6 +28,6 @@ class Bob
   end
 
   def silence?(string)
-    !string || string.empty?
+    string.to_s.empty?
   end
 end
