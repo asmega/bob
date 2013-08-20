@@ -4,7 +4,6 @@ class Bob
     return "Woah, chill out!" if forceful_question?(string)
     return "Sure." if question?(string)
     return "Woah, chill out!" if shouting?(string)
-    return "Whatever." if forceful?(string)
 
     "Whatever."
   end
@@ -13,10 +12,6 @@ class Bob
 
   def shouting?(string)
     string =~ /^([^a-z])+$/
-  end
-
-  def forceful?(string)
-    string.end_with?('!')
   end
 
   def question?(string)
